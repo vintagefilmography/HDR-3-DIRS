@@ -24,18 +24,17 @@ Note: Hawkeye board V12 or higher and MSP FW are required for proper HDR operati
 Then in Code Composer use File->Switch Workspace to load in this new wokspace. The project that you want to build is
 hawkeye_12_hdr_3dirs
 
-Usage:
+Run instructions:
 To run the sw download the files from this repo and go to the HDR/bin/Release
 directory and run the HDR1.exe file by double clicking on it. The Device Settings window will pop up.
 Select the device and resolution as required and click OK.
 The Device Window will close and the app window will pop up.
+![image](https://github.com/vintagefilmography/HDR-3-DIRS-EX226/assets/48537944/a878edd1-8e4e-4464-9561-2d7abccedd84)
 
-The directory path of the output images is set by the Path button. Snap11
-
-The image numbering will be sequential. If you want the start number different than 1
-then enter it in the Img Number field or use the arrows.
+The directory path of the output images is set by the Path button.
 If using enfuseGUI the numbering should start at 1000 because
 enfuseGUI does not sort the images properly. This can also come in handy if the scan is stopped and restarted.
+This needs tot bee verified.
 
 Then click on Trigger buton a few times.
 It will go from red to white. Leave it white for free run.
@@ -44,8 +43,8 @@ The camera preview will be displayed in the preview window.
 Click on ZoomIn and ZoomOut buttons and set the zoom as needed.
 Click on Settings button.
 The familiar camera settings will pop up.
-Set the color, partial scan etc
-Turn auto exposure off the exposure tab. The HDR runs in manual exposure. Set Exp Dec to the number of stops times 3. I.e. for 1 stop decrement use number 3. Do a test run to see if the decremnet is large enough to reduce the overexposure of bright areas.
+Set the color, partial scan etc  (note partial scan works only if the initial re selection was set to lower than fill rez)  
+Turn auto exposure off the exposure tab. The HDR runs in manual exposure. Set Exp Inc to the number of stops times 3. I.e. for 1 stop decrement use number 3. Do a test run to see if the decremnet is large enough to reduce the overexposure of bright areas.
 You can leave the settings window open or you can close it if no more adjustments are anticipated. Click again on the Start button. It should go white.
 Click on SaveConf button to save the device settings.
 Make sure the Start buttoon is not active, otherwise an exception will pop up.
@@ -53,7 +52,7 @@ The next time when you run the app you can use the LoadConf to retrieve the sett
 The settings are stored in device_state.txt file in the same directory where the app resides.
 Select the bit depth by clicking the Bit64 button. Do not do this if you want to leave the default 32 bit. The Bit64 button will turn red indicating 64 bit mode.
 Make sure that the Start button is not active when you are doing this otherwise the app will crash.
-Essentially the start botton starts the live display and the bit depth and soem other camera critical settings can not be changed in Live mode. Hit Load Exp to load the exposure value from the camera to the app. Hit Disp Exp to see the actual exposure. This can be done at any point during scan. Most of other settings can be changed in Live mode however.
+Essentially the start botton starts the live display and the bit depth and some other camera critical settings can not be changed in Live mode. Hit Load Exp to load the exposure value from the camera to the app. Hit Disp Exp to see the actual exposure. This can be done at any point during scan. Most of other settings can be changed in Live mode however.
 The SaveTiff button also can be set in Live mode.
 If SaveTiff button is active it will switch from default Jpeg format to Tiff.
 
